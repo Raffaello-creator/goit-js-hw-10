@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Таймер зворотного відліку</title>
+    <style>
+      #timer {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Таймер зворотного відліку</h1>
+    <label>
+      Виберіть дату:
+      <input type="text" id="datetime-picker" />
+    </label>
+
+    <button type="button" id="start-btn" data-start disabled>Старт</button>
+
+    <div id="timer">
+      <span data-days>00</span> днів : <span data-hours>00</span> годин :
+      <span data-minutes>00</span> хвилин : <span data-seconds>00</span> секунд
+    </div>
+
+    <script type="module" src="./js/1-timer.js"></script>
+  </body>
+</html>
