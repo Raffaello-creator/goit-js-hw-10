@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Таймер</title>
+    <style>
+      #timer {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px;
+      }
+    </style>
+    <script type="module" crossorigin src="/goit-js-hw-10/1-timer.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/vendor-BbbuE1sJ.js">
+    <link rel="stylesheet" crossorigin href="/goit-js-hw-10/assets/vendor-CZjNVMTf.css">
+  </head>
+  <body>
+    <h1>Таймер</h1>
+    <label>
+      Выбери дату:
+      <input type="text" id="datetime-picker" />
+    </label>
+
+    <button type="button" id="start-btn" data-start disabled>Старт</button>
+
+    <div id="timer">
+      <span data-days>00</span> дней : <span data-hours>00</span> часов :
+      <span data-minutes>00</span> минут : <span data-seconds>00</span> секунд
+    </div>
+
+  </body>
+</html>
