@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
       selectedDate = selectedDates[0];
       if (selectedDate < new Date()) {
         iziToast.error({
-          title: 'Помилка',
-          message: 'Вибрана дата вже минула. Виберіть майбутню дату!',
+          title: 'Ошибка',
+          message: 'Вибрана дата уже прошла. Выбкри другую дату!',
           position: 'topRight',
         });
         startBtn.disabled = true;
@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!selectedDate) {
       iziToast.warning({
-        title: 'Увага',
-        message: 'Будь ласка, виберіть дату перед запуском таймера!',
+        title: 'Внимание',
+        message: 'Пожалуйста, выбери дату перед запуском!',
         position: 'topRight',
       });
       return;
@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (timeLeft <= 0) {
         clearInterval(countdownInterval);
         iziToast.success({
-          title: 'Час вийшов!',
-          message: 'Таймер завершився!',
+          title: 'Время вышло!',
+          message: 'Таймер завершился!',
           position: 'topRight',
         });
         updateTimerDisplay(0, 0, 0, 0);
