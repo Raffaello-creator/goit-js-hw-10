@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
       selectedDate = selectedDates[0];
       if (selectedDate < new Date()) {
         iziToast.error({
-          title: 'Ошибка',
-          message: 'Вибрана дата уже прошла. Выбкри другую дату!',
+          title: 'Error',
+          message: 'Please choose a date in the future.',
           position: 'topRight',
         });
         startBtn.disabled = true;
@@ -39,12 +39,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!selectedDate) {
       iziToast.warning({
-        title: 'Внимание',
-        message: 'Пожалуйста, выбери дату перед запуском!',
+        title: 'Warning',
+        message: 'Please choose a date before starting!',
         position: 'topRight',
       });
       return;
     }
+
+    startBtn.disabled = true;
+    datePicker.disabled = true;
 
     countdownInterval = setInterval(() => {
       const now = new Date();
@@ -53,11 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
       if (timeLeft <= 0) {
         clearInterval(countdownInterval);
         iziToast.success({
-          title: 'Время вышло!',
-          message: 'Таймер завершился!',
+          title: 'Time is up!',
+          message: 'The countdown has ended!',
           position: 'topRight',
         });
         updateTimerDisplay(0, 0, 0, 0);
+        datePicker.disabled = false;
+        startBtn.disabled = true;
         return;
       }
 
